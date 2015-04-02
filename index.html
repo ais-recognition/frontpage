@@ -53,48 +53,53 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu message-dropdown">
-                        <li class="message-preview">
+                        <li class="message-preview" id = "div1">
                             <a href="#">
                                 <div class="media">
                                     <span class="pull-left">
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                     <div class="media-body">
-                                        <h5 class="media-heading" id = "listView"><strong></strong>
+                                        <h5 class="media-heading"><strong>Yuannan Cai</strong>
                                         </h5>
-                                        <p class="small text-muted" id= "time1"><i class="fa fa-clock-o"></i> </p>
+                                        <p class="small text-muted" id= "time1"><i class="fa fa-clock-o"></i> Today at 3:21 PM</p>
                                         <p></p>
                                     </div>
                                 </div>
                             </a>
                         </li>
-                        <!--
-                        <li class="message-preview">
-							<div class="media" id = "listView">
-                                    
-                              </div>
+                        
+                        
+						<li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object img-min-height-width-50" src="res/wenyu.jpg" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><strong>Wenyu Zhang</strong>
+                                        </h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Today at 1:31 PM</p>
+                                    </div>
+                                </div>
+                            </a>
                         </li>
-                        -->
-                        <!--
+                        
                         <li class="message-preview">
                             <a href="#">
                                 <div class="media">
                                     <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                        <img class="media-object img-min-height-width-50" src="res/zhilei.JPG" alt="">
                                     </span>
                                     <div class="media-body">
                                         <h5 class="media-heading"><strong>Zhilei Miao</strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
                                     </div>
                                 </div>
                             </a>
                         </li>
-                        <li class="message-footer">
-                            <a href="#" onClick="xx();">Read All New Messages</a>
-                        </li>
-                        -->
+                        
                         <li class="message-footer centered">
                         	<input type="button" class="btn btn-default" id="mybutt" value="Update" />
                         </li>
@@ -179,7 +184,7 @@
                                         <i class="fa fa-comments fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">9</div>
+                                        <div class="huge" id = "newmessage">0</div>
                                         <div>New Messages</div>
                                     </div>
                                 </div>
@@ -335,8 +340,15 @@
     
     <!-- GET -->
     <script>
-		
+		if ($('#div1:hover').length != 0) {
+			alert("a");
+		}	
+			
 		$('#mybutt').click(function() {
+
+			$('#time1').html('<i class="fa fa-clock-o"></i> Just Now');
+			$('#newmessage').html('1');
+			$("#div1").addClass("media-yellow");
 			$.getJSON("/Users/zhang/Workspace/www/sites/speakerRecognition-FrontEnd/info.txt", function(data) {
 				var name = data.firstName;
 				var out = 'Wenyu';
