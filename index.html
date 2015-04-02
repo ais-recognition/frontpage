@@ -389,7 +389,7 @@
 		$('#mybutt').click(function() {
 			var out = '<ul><li>Item One</li><li>Item Two</li><li>Item Three</li></ul>';
 			var name;
-			$.getJSON("/Users/zhang/Workspace/www/sites/speakerRecognition-FrontEnd/info.txt", function(data) {
+			$.getJSON("http://localhost:8080/test", function(data) {
 					name = data.firstName;
 					
 			alert(name);
