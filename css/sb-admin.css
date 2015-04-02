@@ -92,6 +92,10 @@ li.message-preview>a {
     padding-bottom: 15px;
 }
 
+li.centered{
+    text-align:center;
+}
+
 li.message-footer {
     margin: 5px 0;
 }

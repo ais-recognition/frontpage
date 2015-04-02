@@ -60,14 +60,15 @@
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                     <div class="media-body">
-                                        <h5 class="media-heading"><strong>Yuannan Cai</strong>
+                                        <h5 class="media-heading" id = "listView"><strong></strong>
                                         </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                        <p class="small text-muted" id= "time1"><i class="fa fa-clock-o"></i> </p>
+                                        <p></p>
                                     </div>
                                 </div>
                             </a>
                         </li>
+                        <!--
                         <li class="message-preview">
                             <a href="#">
                                 <div class="media">
@@ -85,6 +86,10 @@
                         </li>
                         <li class="message-footer">
                             <a href="#" onClick="xx();">Read All New Messages</a>
+                        </li>
+                        -->
+                        <li class="message-footer centered">
+                        	<input type="button" class="btn btn-default" id="mybutt" value="Update" />
                         </li>
                     </ul>
                 </li>
@@ -187,9 +192,6 @@
                     </div>
                 </div>
                 <!-- /.row -->
-				
-							<button onclick="xx();">Try it</button>
-                            <div id="zwy">aaa</div>
 				
 				
                 <div class="row">
@@ -383,12 +385,18 @@
     
     <!-- GET -->
     <script>
-	    function xx() {    			   
-		    $.getJSON("/Users/zhang/Workspace/www/sites/speakerRecognition-FrontEnd/info.txt", function(data) {
-					document.getElementById("zwy").innerHTML = data.firstName;		
-				
+		
+		$('#mybutt').click(function() {
+			var out = '<ul><li>Item One</li><li>Item Two</li><li>Item Three</li></ul>';
+			var name;
+			$.getJSON("/Users/zhang/Workspace/www/sites/speakerRecognition-FrontEnd/info.txt", function(data) {
+					name = data.firstName;
+					
+			alert(name);
 			});
-		}
+			out = name;
+			$('#listView').html(out);
+		});
 	 
     </script>
 	    
