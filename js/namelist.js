@@ -16,5 +16,5 @@ function myFunction(arr) {
     for(i = 0; i < arr.length; i++) {
         out += arr[i].name;
     }
-    document.getElementById("view").innerHTML = out;
+    document.getElementById("id01").innerHTML = out;
 }

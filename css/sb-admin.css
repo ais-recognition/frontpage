@@ -216,3 +216,10 @@ ul.alert-dropdown {
 .panel-yellow a:hover {
     color: #df8a13;
 }
+.img-min-height-width-50 {
+    height: 50px;
+    width: 50px;
+}
+.media-yellow {
+	background-color: #f6f69e;
+}

@@ -52,12 +52,13 @@
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu message-dropdown">
+                    <ul class="dropdown-menu message-dropdown" id = "tables">
+                        <!--
                         <li class="message-preview" id = "div1">
                             <a href="#">
                                 <div class="media">
                                     <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                        <img class="media-object img-min-height-width-50" src="res/yuannan.jpg" alt="">
                                     </span>
                                     <div class="media-body">
                                         <h5 class="media-heading"><strong>Yuannan Cai</strong>
@@ -68,37 +69,7 @@
                                 </div>
                             </a>
                         </li>
-                        
-                        
-						<li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object img-min-height-width-50" src="res/wenyu.jpg" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>Wenyu Zhang</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Today at 1:31 PM</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object img-min-height-width-50" src="res/zhilei.JPG" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>Zhilei Miao</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
+                        -->
                         
                         <li class="message-footer centered">
                         	<input type="button" class="btn btn-default" id="mybutt" value="Update" />
@@ -339,24 +310,7 @@
     <script src="js/bootstrap.min.js"></script>
     
     <!-- GET -->
-    <script>
-		if ($('#div1:hover').length != 0) {
-			alert("a");
-		}	
-			
-		$('#mybutt').click(function() {
-
-			$('#time1').html('<i class="fa fa-clock-o"></i> Just Now');
-			$('#newmessage').html('1');
-			$("#div1").addClass("media-yellow");
-			$.getJSON("/Users/zhang/Workspace/www/sites/speakerRecognition-FrontEnd/info.txt", function(data) {
-				var name = data.firstName;
-				var out = 'Wenyu';
-				$('#listView').html(out);
-			});
-		});
-	 
-    </script>
+    <script src="js/commJson.js"></script>
 	    
 </body>
 
